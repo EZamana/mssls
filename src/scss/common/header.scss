@@ -1,0 +1,80 @@
+.header {
+  font-family: Raleway, sans-serif;
+  margin: 0 auto;
+  width: 1110px;
+  background-color: $grayColor;
+
+  &-navigation {
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    &-list {
+
+
+      &-item {
+        position: relative;
+        margin-left: 2.125rem;
+        display: inline-flex;
+        align-content: center;
+
+        &:hover {
+
+        }
+
+        &-link {
+
+
+          &:hover {
+            color: $redColor;
+            transition: .3s;
+          }
+
+          &:hover ~ .header-navigation-sublist {
+            z-index: 9999;
+            opacity: 1;
+            transform: scaleY(1);
+            transition: .5s ease-in-out;
+          }
+        }
+
+        &-arrow {
+          position: relative;
+          top: 0.063rem;
+          margin-left: 0.563rem;
+        }
+      }
+    }
+
+    &-sublist {
+
+      position: absolute;
+      box-shadow: 0 17px 40px rgba(25, 69, 122, 0.1);
+      top: 100%;
+      left: 0;
+      opacity: 0;
+      transform: scaleY(0);
+      transform-origin: 0 0;
+      transition: .5s ease-in-out;
+
+      &-item {
+
+        &-link {
+          display: block;
+          background-color: white;
+          width: 224px;
+          padding: 0.781rem 0 0.781rem 1.25rem;
+
+          &:hover {
+            color: $redColor;
+          }
+
+          &:active {
+            color: $darkBlue;
+            background-color: $darkBlue;
+            opacity: 0.1;
+          }
+        }
+      }
+    }
+  }
+}
