@@ -1,10 +1,11 @@
 .header {
-  font-family: Raleway, sans-serif;
+  font-family: 'Raleway', sans-serif;
   margin: 0 auto;
-  width: 1110px;
   background-color: $grayColor;
 
   &-navigation {
+    height: inherit;
+    display: flex;
     font-size: 1.25rem;
     font-weight: 600;
 
@@ -17,24 +18,28 @@
         display: inline-flex;
         align-content: center;
 
-        &:hover {
-
+        &:hover > .header-navigation-sublist {
+          opacity: 1;
+          transform: scaleY(1);
         }
 
         &-link {
-
+          display: inline-flex;
 
           &:hover {
             color: $redColor;
             transition: .3s;
           }
 
-          &:hover ~ .header-navigation-sublist {
-            z-index: 9999;
-            opacity: 1;
-            transform: scaleY(1);
-            transition: .5s ease-in-out;
+          &:active {
+            color: blue;
           }
+
+          /* &:hover ~ .header-navigation-sublist {
+             opacity: 1;
+             transform: scaleY(1);
+             visibility: visible;
+           }*/
         }
 
         &-arrow {
@@ -46,11 +51,9 @@
     }
 
     &-sublist {
-
       position: absolute;
-      box-shadow: 0 17px 40px rgba(25, 69, 122, 0.1);
+      box-shadow: 0 1.063rem 2.5rem rgba(25, 69, 122, 0.1);
       top: 100%;
-      left: 0;
       opacity: 0;
       transform: scaleY(0);
       transform-origin: 0 0;
@@ -61,17 +64,17 @@
         &-link {
           display: block;
           background-color: white;
-          width: 224px;
-          padding: 0.781rem 0 0.781rem 1.25rem;
+          width: 15.25rem;
+          padding: 0.781rem 0.625rem 0.781rem 1.25rem;
 
           &:hover {
             color: $redColor;
+            transition: .3s;
           }
 
           &:active {
             color: $darkBlue;
-            background-color: $darkBlue;
-            opacity: 0.1;
+            background-color: rgba(25, 69, 122, 0.1);
           }
         }
       }
